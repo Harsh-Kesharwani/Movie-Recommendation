@@ -34,7 +34,14 @@ def recommend(movie):
 # Load data
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+# similarity = pickle.load(open('similarity.pkl', 'rb'))
+
+import zipfile
+
+with zipfile.ZipFile('similarity.zip', 'r') as zipf:
+    zipf.extractall()
+    similarity = pickle.load(open('similarity.pkl', 'rb'))
+
 
 # Streamlit UI
 st.title('Movie Recommender System')

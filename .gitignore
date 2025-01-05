@@ -2,3 +2,5 @@
 .env
 .gradio
 .ipynb_checkpoints
+.similarity.pkl
+.movies.pkl
